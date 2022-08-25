@@ -354,7 +354,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 42fb08d28650f4bc681513927a86fa11, type: 2}
+  - {fileID: 2100000, guid: 309440c738c76410fa5981aa12738456, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -411,7 +411,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 118d55899252242f3ab32404aa320f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  playerName: Kirby
+  speed: 10
   hInput: 0
   vInput: 0
 --- !u!1 &1776239887
