@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public string playerName = "Kirby";
 
     public int speed; // Set directional speed
+    public float rotSpeed;
     public float hInput; // Variable for horizontal input
     public float vInput; // Variable for vertical input
 
@@ -23,7 +24,7 @@ public class PlayerController : MonoBehaviour
         vInput = Input.GetAxis("Vertical"); // Input from keyboard
 
         // Player move code along horizontal plane
-        transform.Translate(Vector3.right * speed * hInput * Time.deltaTime);
+        transform.Rotate(Vector3.up, rotSpeed * speed * hInput * Time.deltaTime);
         transform.Translate(Vector3.forward * speed * vInput * Time.deltaTime);
     }
 }
