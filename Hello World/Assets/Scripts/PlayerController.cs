@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         hInput = Input.GetAxis("Horizontal"); // Input from keyboard
         vInput = Input.GetAxis("Vertical"); // Input from keyboard
@@ -26,5 +26,6 @@ public class PlayerController : MonoBehaviour
         // Player move code along horizontal plane
         transform.Rotate(Vector3.up, rotSpeed * speed * hInput * Time.deltaTime);
         transform.Translate(Vector3.forward * speed * vInput * Time.deltaTime);
+        
     }
 }
