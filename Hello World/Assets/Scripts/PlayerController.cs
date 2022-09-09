@@ -26,6 +26,5 @@ public class PlayerController : MonoBehaviour
         // Player move code along horizontal plane
         transform.Rotate(Vector3.up, rotSpeed * speed * hInput * Time.deltaTime);
         transform.Translate(Vector3.forward * speed * vInput * Time.deltaTime);
-        
     }
 }

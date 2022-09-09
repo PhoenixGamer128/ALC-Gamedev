@@ -20,7 +20,7 @@ public class Balloon : MonoBehaviour
         clicksToPop -= 1;
         transform.localScale += Vector3.one * scaleToIncrease;
 
-        if(clicksToPop <= 0)
+        if(clicksToPop == 0)
         {
             Destroy(gameObject);
         }
