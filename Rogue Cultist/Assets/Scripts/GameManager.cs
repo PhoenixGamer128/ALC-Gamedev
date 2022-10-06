@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public int key;
 
+    /*
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     {
  
     }
+    */
 
     // Adds number of keys to inventory and shows a message
     public void AddKey(int amount)
