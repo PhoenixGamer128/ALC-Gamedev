@@ -12,7 +12,9 @@ public class MoveAndShoot : MonoBehaviour
 
     private float shotDelay;
     public float shootDelay;
-    private GameObject projectile;
+    public GameObject projectile;
+
+    private float _distance;
 
     // Start is called before the first frame update
     void Start()
@@ -24,13 +26,13 @@ public class MoveAndShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        private float _distance;
-        _distance = Vector2.Distance(transform.position,target.position
+        
+        _distance = Vector2.Distance(transform.position,target.position);
         if(_distance > stopDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position,target.position,speed*time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position,target.position,speed*Time.deltaTime);
         }
-        else if(_distance < stopDistance && _distance > retreatDistance)
+        else if(_distance < retreatDistance)
         {
             transform.position = (Vector2.MoveTowards(transform.position,target.position,-speed*Time.deltaTime));
         }
@@ -51,7 +53,7 @@ public class MoveAndShoot : MonoBehaviour
         {
             transform.position = this.transform.position; // ???
             Instantiate(projectile,transform.position,Quaternion.identity); // Fire Projectile
-            shotDelay = startDelay;
+            shotDelay = shootDelay;
         }
     }
 }
