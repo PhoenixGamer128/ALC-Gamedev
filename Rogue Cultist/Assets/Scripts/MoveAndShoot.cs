@@ -49,7 +49,7 @@ public class MoveAndShoot : MonoBehaviour
 
     void Attack()
     {
-        if(_distance > stopDistance)
+        if(_distance >= stopDistance)
         {
             transform.position = this.transform.position; // ???
             Instantiate(projectile,transform.position,Quaternion.identity); // Fire Projectile
