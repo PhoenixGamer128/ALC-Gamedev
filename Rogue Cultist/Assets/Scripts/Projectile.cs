@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public float speed;
     private Transform player;
-    private Vector2 target;
+    private Vector2 target; // Target is an x,y coordinate, not the target itself
 
     // Start is called before the first frame update
     void Start()
