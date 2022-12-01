@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     [Header("Player Stats")]
     public float moveSpeed;
     public float jumpForce;
+    //public int health;
+    //public int ammo;
 
     [Header("Camera Settings")]
     public float lookSensitivity;
@@ -70,5 +72,17 @@ public class PlayerController : MonoBehaviour
         Ray ray = new Ray(transform.position, Vector3.down);
         if(Physics.Raycast(ray,1.1f))
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    }
+
+    public void AddHealth(int amount)
+    {
+        Debug.Log("Player picked up healthpack");
+        //health += amount;
+    }
+
+    public void GiveAmmo(int amount)
+    {
+        Debug.Log("Player picked up ammo");
+        //ammo += amount;
     }
 }
