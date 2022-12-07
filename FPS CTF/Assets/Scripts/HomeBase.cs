@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class HomeBase : MonoBehaviour
 {
-    private GameObject flag;
+    //private GameObject flag;
     private GameManager gm;
+    private Renderer flagRend;
 
     // Start is called before the first frame update
     void Start()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        flagRend = GameObject.Find("FlagHome").GetComponent<Renderer>();
 
+        flagRend.enabled = false;
     }
 
     // Update is called once per frame
@@ -22,11 +25,11 @@ public class HomeBase : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if(other.CompareTag("Player") && gm.hasFlag)
         {
-            gm.placedFlag = true;
-            //gm.hasFlag = false;
-            flag.SetActive(true);
+            gm.PlaceFlag();
+            gm.hasFlag = false;
+            flagRend.enabled = true;
         }
     }
 }

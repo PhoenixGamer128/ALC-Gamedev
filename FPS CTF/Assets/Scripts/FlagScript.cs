@@ -5,18 +5,15 @@ using UnityEngine;
 public class FlagScript : MonoBehaviour
 {
     private GameManager gm;
+    private Renderer rend;
 
     // Start is called before the first frame update
     void Start()
     {
         // Find GameManager object, then get its script component
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        rend = GetComponent<Renderer>();
+        rend.enabled = true;
     }
 
     void OnTriggerEnter(Collider other)
@@ -25,7 +22,7 @@ public class FlagScript : MonoBehaviour
         {
             gm.hasFlag = true;
             Debug.Log("You have taken control of the flag!");
-            this.gameObject.SetActive(false);
+            rend.enabled = false;
         }
     }
 }
