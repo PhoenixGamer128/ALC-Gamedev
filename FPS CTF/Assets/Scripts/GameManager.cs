@@ -7,17 +7,21 @@ public class GameManager : MonoBehaviour
     public bool hasFlag;
     public bool placedFlag;
 
+    private bool wonGame;
+
     // Start is called before the first frame update
     void Start()
     {
         hasFlag = false;
         placedFlag = false;
+
+        wonGame = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(placedFlag)
+        if(placedFlag && !wonGame)
         {
             WinGame();
         }
@@ -36,5 +40,6 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("You have captured the flag!");
         Time.timeScale = 5;
+        wonGame = true;
     }
 }
